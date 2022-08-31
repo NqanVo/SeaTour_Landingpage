@@ -1,13 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+::-webkit-scrollbar {
+  display: none;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply font-[Poppins];
+}
+html {
+  scroll-behavior: smooth;
+}
+h1 {
+  @apply text-3xl
+  md:text-4xl
+  font-bold;
+}
+h2 {
+  @apply text-2xl
+    md:text-3xl
+    font-bold;
+}
+h3 {
+  @apply text-xl
+    md:text-xl
+    font-bold;
+}
+ul li {
+  @apply font-medium p-4 cursor-pointer hover:text-primary duration-500 ease-in-out
+  relative
+  block
+  before:absolute
+  before:bg-primary
+  before:h-[2px]
+  before:top-[100%]
+  before:left-[-1%]
+  before:w-0
+  before:duration-500
+  before:ease-in-out
+  hover:before:w-full;
+}
+button {
+  @apply w-full p-2 font-medium text-base text-white bg-gradient-to-r from-primary to-[#C493FF] rounded-[5px]
+  cursor-pointer
+  duration-500
+  flex justify-center
+  bg-size200
+  hover:bg-right
+  ease-in-out;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  @apply cursor-pointer
+  duration-500
+  ease-in-out
+  hover:scale-105;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white;
+  font-weight: 900;
+  transition: 0.5s;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  transform: scale(1.1);
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply text-2xl
+  hidden
+  md:block
+  !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
 }
