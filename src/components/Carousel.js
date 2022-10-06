@@ -1,5 +1,3 @@
-import React, { useState, useRef } from 'react';
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import SectionDefaultLayout from './SectionDefaultLayout';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from "swiper";
